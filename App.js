@@ -28,27 +28,79 @@ import {
 const App: () => React$Node = () => {
   return (
     <>
-      <View
-        style={{
-          backgroundColor: 'white',
-          flexDirection: 'row',
-          paddingTop:8,
-          alignItems: 'flex-start'        
-        }}>
-        <View style={{backgroundColor: '#03a9f4', flex: 1, height: 80, marginHorizontal: 4,marginLeft: 8, flexDirection: 'row', padding: 10 }}>
-          <View style={{backgroundColor:'#fb4c4c', flex: 1, marginHorizontal: 4}}></View>
-          <View style={{backgroundColor:'#fb4c4c', flex: 1, marginHorizontal: 4}}></View>
-          <View style={{backgroundColor:'#fb4c4c', flex: 1, marginHorizontal: 4}}></View>
-        
+      <View style={styles.parent}>
+        <View
+          style={{
+            backgroundColor: '#03a9f4',
+            width: '100%',
+            height: 80,
+            flexDirection: 'row',
+            padding: 10,
+            marginBottom: 10,
+            position: 'relative',
+          }}>
+          <View
+            style={{
+              backgroundColor: '#fb4c4c',
+              width: 20,
+              height: 20,
+              borderRadius: 100,
+              position: 'absolute',
+              right: -10,
+              top: -10,
+            }}
+          />
         </View>
-        <View style={{backgroundColor: '#ffc107', flex: 1, height: 70, marginHorizontal: 4, justifyContent: 'center', alignItems: 'center' }} >
+        <View
+          style={[
+            {
+              backgroundColor: '#ffc107',
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginLeft: 0,
+            },
+            styles.box,
+          ]}>
           <Text>Center</Text>
         </View>
-        <View style={{backgroundColor: '#4caf50', flex: 1, height: 60, marginHorizontal: 4, borderRadius: 4 }} />
-        <View style={{backgroundColor: '#d57016', flex: 1, height: 50, marginHorizontal: 4, marginRight: 8 }} />
+        <View
+          style={[
+            {
+              backgroundColor: '#4caf50',
+            },
+            styles.box,
+          ]}
+        />
+        <View
+          style={[
+            {
+              backgroundColor: '#d57016',
+              marginRight: 0,
+            },
+            styles.box,
+          ]}
+        />
       </View>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  parent: {
+    backgroundColor: 'white',
+    flexDirection: 'row',
+    paddingTop: 8,
+    alignItems: 'flex-start',
+    flex: 1,
+    flexWrap: 'wrap',
+    paddingHorizontal: 14,
+  },
+  box: {
+    flex: 1,
+    height: 80,
+    borderRadius: 4,
+    marginHorizontal: 4,
+  },
+});
 
 export default App;
